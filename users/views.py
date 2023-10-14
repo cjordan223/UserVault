@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+import csv
+from django.http import HttpResponse
 from .models import User
 from .forms import UserForm
 
@@ -48,3 +50,17 @@ def user_delete(request, user_id):
     user = User.objects.get(id=user_id)
     user.delete()
     return redirect('user_list')
+
+
+def export_users_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="users.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Name', 'Email', 'Age'])  # Header
+
+    users = User.objects.all()
+    for user in users:
+        writer.writerow([user.id, user.name, user.email, user.age])
+
+    return response

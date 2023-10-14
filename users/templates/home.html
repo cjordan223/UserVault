@@ -3,12 +3,66 @@
 
 <head>
     <title>Welcome to MyDBMS</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container styling */
+        .container {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        /* Header styling */
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        /* Paragraph styling */
+        p {
+            color: #555;
+        }
+
+        /* Links styling */
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for links */
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to My Database Management System!</h1>
-    <p>This is a simple Django web app for managing users.</p>
-    <a href="/users/">Go to Users</a> | <a href="/admin/">Admin</a>
+    <div class="container">
+        <h1>Welcome to My Database Management System!</h1>
+        <p>This is a simple Django web app for managing users.</p>
+        <a href="/users/">Go to Users</a> | <a href="/admin/">Admin</a>
+    </div>
 </body>
 
 </html>

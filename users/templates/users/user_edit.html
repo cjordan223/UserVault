@@ -1,9 +1,26 @@
-<h2>Edit User</h2>
+<!DOCTYPE html>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Changes</button>
-</form>
+<html>
 
-<a href="{% url 'user_list' %}">Back to User List</a>
+<head>
+    <title>Edit User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4"> Edit User </h2>
+
+        <form method="post" class="mb-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <a href="{% url 'user_list' %}">Back to User List</a>
+
+    </div>
+
+</body>
+
+</html>
